@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  satisfactory:
+    image: wolveix/satisfactory-server:latest
+    container_name: satisfactory-server
+    hostname: satisfactory
+    ports:
+      - "7777:7777/udp"
+      - "7777:7777/tcp"
+      - "15000:15000/udp"
+      - "15777:15777/udp"
+    volumes:
+      - ./config:/config
+    environment:
+      - MAXPLAYERS=8
+      - PGID=1000
+      - PUID=1000
+      - STEAMBETA=false
+      - MULTIHOME=
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 8G
+        reservations:
+          cpus: '2'
+          memory: 4G
+    restart: unless-stopped

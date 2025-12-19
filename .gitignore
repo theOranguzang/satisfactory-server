@@ -1,0 +1,27 @@
+# Satisfactory Server Git Ignore
+
+# Game files and server data (too large for git)
+config/
+gamefiles/
+backups/
+logs/
+saved/
+
+# Docker volumes
+data/
+
+# Environment files with secrets
+.env
+*.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
